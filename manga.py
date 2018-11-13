@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import time
 import progressbar
 import os
-from progressbar import ProgressBar
+from tqdm import tqdm
 ch = 1 #chapter
 page = 1
 
@@ -36,7 +36,7 @@ for ch in range(ch,  finch+1):
     time.sleep(2)
     fin = int(soup.find_all("option")[-1].get_text())
 
-    for i in range(1, fin + 1):
+    for i in tqdm(range(1, fin + 1)):
         url = baseAdd + str(ch) + "/" + str(page)
         r = requests.get(url)
         r.content

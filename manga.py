@@ -4,7 +4,9 @@ import urllib
 import urllib.request
 from bs4 import BeautifulSoup
 import time
+import progressbar
 import os
+from progressbar import ProgressBar
 ch = 1 #chapter
 page = 1
 
@@ -39,19 +41,18 @@ for ch in range(ch,  finch+1):
         r = requests.get(url)
         r.content
         soup = BeautifulSoup(r.content);
-        # fin = int(soup.find_all("option")[-1].get_text())
         imgurl = soup.find_all("img", {"id":"img"})
         imgurls = str(imgurl)
-        # lastpg = soup.find_all("div", {"id":"selectpage"})
         start = imgurls.find('src=\"') + 5
         end = imgurls.find('.jpg') + 4
         imgurls = imgurls[start:end]
-        print(imgurls)
+        # print(imgurls)
         class AppURLopener(urllib.request.FancyURLopener):
             version = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.69 Safari/537.36"
         urllib._urlopener = AppURLopener()
         urllib._urlopener.retrieve(imgurls, str(page) + ".jpg")
         page = page + 1
     os.chdir('..')
+    page = 1
 
 k = input("Press any key to exit...")

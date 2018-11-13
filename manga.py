@@ -15,6 +15,7 @@ finch = int(input("Enter Final Chapter Number: "))
 fin = 2;
 ch = inich
 for ch in range(ch,  finch+1):
+    print('\n')
     if os.path.isdir(baseAdd[26:]) == False:
         os.mkdir(baseAdd[26:])    
 
@@ -30,7 +31,7 @@ for ch in range(ch,  finch+1):
     soup = BeautifulSoup(r.content);
     fin = int(soup.find_all("option")[-1].get_text())
 
-    for i in tqdm(range(1, fin + 1)):
+    for i in tqdm(range(1, fin + 1), desc="Chapter " + str(ch), ascii=True):
         url = baseAdd + str(ch) + "/" + str(page)
         r = requests.get(url)
         r.content

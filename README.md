@@ -3,7 +3,7 @@ a python based manga downloader to download titles from MangaPanda.com
 
 ## Usage
 ```
-pip install -r requirements.tx
+pip install -r requirements.txt
 ```
 Download the manga.py file
 

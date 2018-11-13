@@ -1,5 +1,5 @@
 # MangaDownloader (WIP)
-a selenium based manga downloader
+a python based manga downloader
 
 Downloads any chapter from mangapanda
 Currently Downloads one chapter at a time

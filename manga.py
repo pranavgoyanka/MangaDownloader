@@ -3,20 +3,15 @@ import requests
 import urllib
 import urllib.request
 from bs4 import BeautifulSoup
-import time
-import progressbar
 import os
 from tqdm import tqdm
-ch = 1 #chapter
+ch = 1 
 page = 1
-
-# k = input("Press any key to proceed...")
     
 baseAdd = input("Enter the base address of your manga from MangaPand\neg: https://www.mangapanda.com/shingeki-no-kyojin/\nBase Address: ")
 inich = int(input("Enter Initial Chapter Number: "))
 finch = int(input("Enter Final Chapter Number: "))
-# fin = int(input("Enter last page number of chapter: "))
-# fin = int(soup.find_all("option")[-1].get_text())
+
 fin = 2;
 ch = inich
 for ch in range(ch,  finch+1):
@@ -33,7 +28,6 @@ for ch in range(ch,  finch+1):
     r = requests.get(url)
     r.content
     soup = BeautifulSoup(r.content);
-    time.sleep(2)
     fin = int(soup.find_all("option")[-1].get_text())
 
     for i in tqdm(range(1, fin + 1)):

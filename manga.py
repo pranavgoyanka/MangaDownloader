@@ -10,7 +10,7 @@ page = 1
 
 # k = input("Press any key to proceed...")
     
-# baseAdd = input("Enter the base address of your manga from MangaPand\neg: https://www.mangapanda.com/shingeki-no-kyojin/\nBase Address: ")
+baseAdd = input("Enter the base address of your manga from MangaPand\neg: https://www.mangapanda.com/shingeki-no-kyojin/\nBase Address: ")
 
 baseAdd = "https://www.mangapanda.com/shingeki-no-kyojin/"
 ch = int(input("Enter Chapter Number: "))

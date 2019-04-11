@@ -1,4 +1,4 @@
-# MangaDownloader (WIP)
+# MangaDownloader
 a python based manga downloader to download titles from MangaPanda.com
 
 ## Usage
